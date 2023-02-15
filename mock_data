@@ -1,0 +1,119 @@
+{
+"name": "John Doe",
+"gender": "female",
+"maritalStatus": "married",
+"nationalID": "6767676767",
+"country": "USA",
+"city": "New York",
+"address": "123 Street NY",
+"phoneNumber": "1234567878"
+},
+{
+  "name": "Ellie Atwill",
+  "gender": "Female",
+  "email": "eatwill0@zdnet.com",
+  "maritalStatus": "Married",
+  "nationalID": "710-88-4735",
+  "country": "Albania",
+  "city": "Voskopojë",
+  "address": "2nd Floor",
+  "phoneNumber": "362-884-7276"
+},
+ {
+  "name": "Elijah Palek",
+  "gender": "Male",
+  "email": "epalek1@umich.edu",
+  "maritalStatus": "Married",
+  "nationalID": "750-52-3507",
+  "country": "Albania",
+  "city": "Helmas",
+  "address": "Apt 1251",
+  "phoneNumber": "204-481-1395"
+},
+{
+  "name": "Adelice Yendall",
+  "gender": "Male",
+  "email": "ayendall2@ftc.gov",
+  "maritalStatus": "Married",
+  "nationalID": "300-68-2533",
+  "country": "Angola",
+  "city": "Camabatela",
+  "address": "18th Floor",
+  "phoneNumber": "610-103-3880"
+},
+{
+  "name": "Paco Fergie",
+  "gender": "Female",
+  "email": "pfergie3@answers.com",
+  "maritalStatus": "Single",
+  "nationalID": "540-48-9594",
+  "country": "Albania",
+  "city": "Xarrë",
+  "address": "6th Floor",
+  "phoneNumber": "207-321-2286"
+}, {
+  "name": "Hiram Queyeiro",
+  "gender": "Male",
+  "email": "hqueyeiro4@t.co",
+  "maritalStatus": "Single",
+  "nationalID": "838-70-9807",
+  "country": "Albania",
+  "city": "Rrasa e Sipërme",
+  "address": "Apt 1050",
+  "phoneNumber": "997-725-9536"
+},
+{
+  "name": "Adan Stanyon",
+  "gender": "Female",
+  "email": "astanyon5@globo.com",
+  "maritalStatus": "Married",
+  "nationalID": "810-58-5654",
+  "country": "Albania",
+  "city": "Mamurras",
+  "address": "PO Box 98442",
+  "phoneNumber": "241-333-1306"
+},
+{
+  "name": "Mathias Bau",
+  "gender": "Female",
+  "email": "mbau6@nasa.gov",
+  "maritalStatus": "Married",
+  "nationalID": "669-54-3022",
+  "country": "American Samoa",
+  "city": "Mapusagafou",
+  "address": "Suite 20",
+  "phoneNumber": "220-639-1680"
+},
+{
+  "name": "Tristan Capener",
+  "gender": "Male",
+  "email": "tcapener7@theatlantic.com",
+  "maritalStatus": "Divorced",
+  "nationalID": "872-35-3353",
+  "country": "American Samoa",
+  "city": "Leone",
+  "address": "Suite 80",
+  "phoneNumber": "887-687-8945"
+},
+{
+  "name": "Gilles Ambrodi",
+  "gender": "Male",
+  "email": "gambrodi8@dyndns.org",
+  "maritalStatus": "Single",
+  "nationalID": "878-17-3201",
+  "country": "Angola",
+  "city": "Lobito",
+  "address": "PO Box 67822",
+  "phoneNumber": "357-754-6561"
+},
+{
+  "name": "Bernadina Camden",
+  "gender": "Male",
+  "email": "bcamden9@infoseek.co.jp",
+  "maritalStatus": "Married",
+  "nationalID": "588-47-4039",
+  "country": "Albania",
+  "city": "Mollas",
+  "address": "Apt 1990",
+  "phoneNumber": "276-878-0245"
+}

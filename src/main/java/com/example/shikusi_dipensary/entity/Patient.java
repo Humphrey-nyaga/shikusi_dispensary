@@ -3,7 +3,6 @@ package com.example.shikusi_dipensary.entity;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 @Entity
 @Table(name = "patient")
@@ -12,9 +11,12 @@ public class Patient implements Serializable {
     @Column(name = "id", nullable = false)
     private Long id;
     private String name;
-    private String sex;
+    private String gender;
     private String maritalStatus;
+    @Column(unique=true)
     private String nationalID;
+    @Column(unique = true)
+    private String email;
     private String country;
     private String city;
     private String address;
@@ -22,16 +24,17 @@ public class Patient implements Serializable {
 
     public Patient(){}
 
-    public Patient(String name, String sex, String maritalStatus, String nationalID, String country, String city, String address, String phoneNumber)
+    public Patient(String name, String gender, String maritalStatus, String nationalID, String email, String country, String city, String address, String phoneNumber)
     {
         this.name = name;
-        this.sex = sex;
+        this.gender = gender;
         this.maritalStatus = maritalStatus;
         this.nationalID = nationalID;
         this.country = country;
         this.city = city;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
 
@@ -45,6 +48,10 @@ public class Patient implements Serializable {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setMaritalStatus(String maritalStatus) {
@@ -63,8 +70,11 @@ public class Patient implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    public void setId(Long id) {
+        this.id = id;
     }
 
 
@@ -93,8 +103,8 @@ public class Patient implements Serializable {
         return nationalID;
     }
 
-    public String getSex() {
-        return sex;
+    public String getGender() {
+        return gender;
     }
 
     public String getPhoneNumber() {
@@ -104,8 +114,7 @@ public class Patient implements Serializable {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getEmail(){
+        return email;
     }
-
 }
