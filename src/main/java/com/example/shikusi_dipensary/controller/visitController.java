@@ -1,25 +1,34 @@
 package com.example.shikusi_dipensary.controller;
 
+import com.example.shikusi_dipensary.entity.Patient;
 import com.example.shikusi_dipensary.entity.Visit;
 import com.example.shikusi_dipensary.repository.VisitRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.shikusi_dipensary.services.VisitService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/patient/{patientID}/allVisits")
+@RequestMapping("/api/v1/patient")
 public class visitController {
     private VisitRepository visitRepository;
+    private VisitService visitService;
 
-    public visitController(VisitRepository visitRepository){
+    public visitController(VisitRepository visitRepository ,VisitService visitService){
         this.visitRepository = visitRepository;
+        this.visitService = visitService;
     }
 
-    @GetMapping
+    @GetMapping("/{patientID}/allVisits")
     public List<Visit> getVisitsForPatient(@PathVariable Long patientID){
         return visitRepository.findByPatientId(patientID);
     }
+    @PostMapping("/{patientID}/addVisit")
+    public ResponseEntity<Visit> addVisit(@PathVariable("patientID")Long patientID, @RequestBody Visit visit){
+        Visit newVisit = visitService.addVisit(patientID, visit);
+        return new ResponseEntity<>(visit, HttpStatus.CREATED);
+    }
+
 }

@@ -49,4 +49,6 @@ public class Visit {
     @JoinColumn(name = "patient_id",referencedColumnName = "id")
     private Patient patient;
 
+    public void setPatient(Patient patient) {
+    }
 }
