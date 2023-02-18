@@ -17,8 +17,6 @@ public class Triage implements Serializable {
      * Patient Vitals at triage
      * */
     @Column(unique=true)
-    private int visitID;
-    @Column(unique=true)
     private int patientID;
     private String visitReason;
     private float weight;
@@ -48,11 +46,9 @@ public class Triage implements Serializable {
     }
 
     public Triage(){}
-    public Triage(int patientID, int visitID, String visitReason, float weight, int height, float bodyMassIndex,
+    public Triage(String visitReason, float weight, int height, float bodyMassIndex,
                   int oxygenSaturation, float temperatureDegreeCelcius, Date date, int sysBP,int diasBP)
     {
-        this.patientID = patientID;
-        this.visitID = visitID;
         this.visitReason = visitReason;
         this.weight = weight;
         this.height = height;
@@ -65,15 +61,6 @@ public class Triage implements Serializable {
     }
 
     /*Setters*/
-
-    public void setVisitID(int visitID) {
-        this.visitID = visitID;
-    }
-
-    public void setPatientID(int patientID) {
-        this.patientID = patientID;
-    }
-
     public void setVisitReason (String visitReason){
         this.visitReason = visitReason;
     }public void setWeight(float weight){
@@ -151,11 +138,4 @@ public class Triage implements Serializable {
         this.id = id;
     }
 
-    public int getVisitID() {
-        return visitID;
-    }
-
-    public int getPatientID() {
-        return patientID;
-    }
 }
