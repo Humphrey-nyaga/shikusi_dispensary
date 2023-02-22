@@ -15,6 +15,8 @@ public class Triage implements Serializable {
     /*
      * Patient Vitals at triage
      * */
+    @Column(unique=true)
+    private int patientID;
     private String visitReason;
     private float weight;
     private int height;
@@ -29,6 +31,18 @@ public class Triage implements Serializable {
      * */
     private int sysBP;
     private int diasBP;
+
+    @ManyToOne
+    @JoinColumn(name = "visit_id", referencedColumnName = "id")
+    private Visit visit;
+
+    public Visit getVisit() {
+        return visit;
+    }
+
+    public void setVisit(Visit visit) {
+        this.visit = visit;
+    }
 
     public Triage(){}
     public Triage(String visitReason, float weight, int height, float bodyMassIndex,

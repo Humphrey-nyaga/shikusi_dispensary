@@ -3,6 +3,7 @@ package com.example.shikusi_dipensary.entity;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "patient")
@@ -21,6 +22,7 @@ public class Patient implements Serializable {
     private String city;
     private String address;
     private String phoneNumber;
+
 
     public Patient(){}
 

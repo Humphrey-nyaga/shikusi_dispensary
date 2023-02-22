@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PatientService {
@@ -36,6 +35,6 @@ public class PatientService {
                 .orElseThrow(()-> new PatientNotFoundException("Patient with id: " + " not found."));
     }
     public void deletePatient(Long id){
-         patientRepository.deleteEmployeeById(id);
+         patientRepository.deletePatientById(id);
     }
 }
