@@ -19,19 +19,19 @@ public class PatientController {
         this.patientService = patientService;
     }
 
-    @GetMapping("/findAll")
-    public ResponseEntity<List<Patient>> getAllEmployees(){
+    @GetMapping("/")
+    public ResponseEntity<List<Patient>> getAllPatients(){
         List<Patient> patients = patientService.findAllPatients();
         return new ResponseEntity<>(patients, HttpStatus.OK );
     }
 
-    @GetMapping("/find/{id}")
-    public ResponseEntity<Patient> getEmployee(@PathVariable("id")Long id){
+    @GetMapping("/{id}")
+    public ResponseEntity<Patient> getPatient(@PathVariable("id")Long id){
         Patient patient = patientService.findPatientById(id);
         return new ResponseEntity<>(patient, HttpStatus.OK);
     }
 
-    @PostMapping("/add")
+    @PostMapping("/")
     public ResponseEntity<Patient> addPatient(@RequestBody Patient patient){
         Patient newPatient = patientService.addPatient(patient);
         return new ResponseEntity<>(patient, HttpStatus.CREATED);

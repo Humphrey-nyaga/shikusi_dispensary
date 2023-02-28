@@ -23,6 +23,8 @@ public class Patient implements Serializable {
     private String address;
     private String phoneNumber;
 
+    @OneToMany(mappedBy="patient")
+    private List<Visit> visits;
 
     public Patient(){}
 
@@ -40,6 +42,9 @@ public class Patient implements Serializable {
     }
 
 
+    public void setVisits(List<Visit> visits) {
+        this.visits = visits;
+    }
     public void setAddress(String address) {
         this.address = address;
     }
@@ -118,5 +123,9 @@ public class Patient implements Serializable {
 
     public String getEmail(){
         return email;
+    }
+
+    public List<Visit> getVisits() {
+        return visits;
     }
 }

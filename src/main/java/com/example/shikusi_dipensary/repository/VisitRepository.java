@@ -8,6 +8,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface VisitRepository extends JpaRepository<Visit, Long> {
-    @Query("SELECT v FROM Visit v WHERE v.patient.id = :patientId")
-    List<Visit> findByPatientId(@Param("patientId") Long patientId);
+    @Query("SELECT v FROM Visit v  inner join Patient p ON v.patient.id = p.id\s" +
+           "WHERE v.id = :id")
+
+    List<Visit> findByPatientId(@Param("id") Long patientId);
 }
