@@ -38,14 +38,27 @@ $  mvn clean install
 Step 4: Run the project.
 The api can be accessed from
 ```
-$ http://localhost:8080/api/v1/
+$ http://localhost:8080
 ```
- 
+## Usage Example
+Now that we’ve learned about the anatomy of our endpoints and the different request methods that we should use, it’s time for some examples:
+
+| Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `GET`    | `/api/v1/patient/`                             | Retrieve all patients.                      |
+| `POST`   | `/api/v1/patient/`                             | Create new patient.                       |
+| `GET`    | `/api/v1/patient/{id}`                          | Retrieve given patient with given id.                       |
+| `DELETE`  | `/api/v1/patient/delete/{id}`                          | Delete records of patient with id.                 |
+| `GET`    | `/api/v1/visit/{id}`                          | Retrieve visit details.                       |
+| `POST`   | `/api/v1/visit/{id}`                 | Add a new patient visit of patient with given Id              |
+| `DELETE` | `/api/v1/visit/delete/{id}`  | Delete visit.                    |
+
+
 ## Configuration table
   
    | Components  | Technology  | 
    | :---        |    :----:   |   
-   | Backend   | Spring Boot 6.0+, Java 11+ |
+   | Backend   | Spring Boot 6.0+, Java 11+/ Java 17 |
    | Security |  Spring Security, https|
    | Database | MySQL|
    | API Documentation	| Swagger API + (Hub)|
