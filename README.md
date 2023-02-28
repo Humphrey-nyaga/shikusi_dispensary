@@ -14,3 +14,15 @@
  2. List Patient Visits
  3. Remove Patient Visits
  
+ 
+## Configuration table
+  
+   | Components  | Technology  | 
+   | :---        |    :----:   |   
+   | Backend   | Spring Boot 6.0+, Java 11+ |
+   | Security |  Spring Security, https|
+   | Database | MySQL|
+   | API Documentation	| Swagger API + (Hub)|
+   | Server Build| Maven|
+   | API testing| POSTMAN|
+   | Tool | Intellj Idea|
