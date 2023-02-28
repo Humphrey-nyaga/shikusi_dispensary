@@ -18,28 +18,28 @@
  ## Getting Started
  Step 1: Clone the repository
 ```
-$  git clone https://github.com/Humphrey-nyaga/shikusi_dispensary.git
+git clone https://github.com/Humphrey-nyaga/shikusi_dispensary.git
 ```
 Step 2: Clone the repository
 ```
-$ cd $dirName
+cd $dirName
 ```
 
 Step 3: Create a MySQL Database in your local instance
 Make sure you have MySQL installed.
 You can also download MySQL from here [https://dev.mysql.com/downloads/installer/]
 ```
-$  mysql> CREATE DATABASE shikusi_dispensary;
+mysql> CREATE DATABASE shikusi_dispensary;
 ```
 
 Step 4: cd into the project directory
 ```
-$  mvn clean install
+mvn clean install
 ```
 Step 4: Run the project.
 The api can be accessed from
 ```
-$ http://localhost:8080
+http://localhost:8080/
 ```
 ## Usage Example
 Now that we’ve learned about the anatomy of our endpoints and the different request methods that we should use, it’s time for some examples:
