@@ -1,4 +1,5 @@
-## A Clinic Management Application
+## A Clinic Management Backend API
+
 #### Built using Java Spring Boot
 
 ## Functionality
