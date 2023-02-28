@@ -3,15 +3,14 @@
 
 ## Functionality
 
-## Patient
-
+### Patient 
 #### Add Patient
- List Patients
- Update Patient Bio data
- Delete Patient Bio data
+ 1. List Patients
+ 2. Update Patient Bio data
+ 3. Delete Patient Bio data
 
 ### Visit
- Add Patient Visits
- List Patient Visits
- Remove Patient Visits
+ 1. Add Patient Visits
+ 2. List Patient Visits
+ 3. Remove Patient Visits
  
