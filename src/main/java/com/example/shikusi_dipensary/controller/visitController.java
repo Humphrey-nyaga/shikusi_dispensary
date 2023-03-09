@@ -30,7 +30,7 @@ public class visitController {
 
     @PostMapping("{patientID}/addVisit")
     public ResponseEntity<Visit> addVisit(@PathVariable("patientID")Long patientID, @RequestBody Visit visit){
-        ResponseEntity<Object> newVisit = visitService.addVisit(patientID, visit);
+        visitService.addVisit(patientID, visit);
         return new ResponseEntity<>(visit, HttpStatus.CREATED);
     }
 

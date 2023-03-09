@@ -23,17 +23,13 @@ public class VisitService {
         this.patientRepository = patientRepository;
     }
 
-    public ResponseEntity<Object> addVisit(Long patientId, Visit visit) {
+    public Visit addVisit(Long patientId, Visit visit) {
         Patient patient = patientRepository.findById(patientId)
-                .orElseThrow(() -> new PatientNotFoundException("Patient with id:  " + patientId + " not found"));
+                .orElseThrow(() -> new PatientNotFoundException("Patient with id: " + patientId + " not found"));
 
-        //TODO: Ensure the patient ID is added into Db when other visit details are added
         visit.setPatient(patient);
-        visitRepository.save(visit);
-        URI location= ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(visit.getId()).toUri();
-        return ResponseEntity.created(location).build();
+        return visitRepository.save(visit);
     }
-
 
 
     }
