@@ -27,14 +27,14 @@ public class visitController {
         this.patientService = patientService;
     }
 
-    @GetMapping("/{patientID}/allVisits")
+    @GetMapping("/patient/{patientID}/")
     public List<Visit> getVisitsForPatient(@PathVariable Long patientID){
         return visitRepository.findByPatient_Id(patientID);
     }
 
 
     /* Add patient visits */
-    @PostMapping("{patientID}/addVisit")
+    @PostMapping("/patient/{patientID}/")
     public ResponseEntity<Map<String, Object>> addVisit(@PathVariable("patientID") Long patientID, @RequestBody Visit visit) {
         Patient patient = patientService.findPatientById(patientID);
         visit.setPatient(patient);
