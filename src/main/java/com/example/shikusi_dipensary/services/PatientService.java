@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PatientService {
@@ -26,10 +27,15 @@ public class PatientService {
         return patientRepository.save(patient);
     }
 
-    public Patient updatePatient(Patient patient){
-        return patientRepository.save(patient);
-    }
+    public Patient updatePatient(Patient patient) {
+        Optional<Patient> existingPatient = patientRepository.findById(patient.getId());
 
+        if (existingPatient.isPresent()) {
+            return patientRepository.save(patient);
+        } else {
+            throw new PatientNotFoundException("Patient with id " + patient.getId() + " not found");
+        }
+    }
     public Patient findPatientById(Long id) {
         return patientRepository.findPatientById(id)
                 .orElseThrow(()-> new PatientNotFoundException("Patient with id: " + " not found."));

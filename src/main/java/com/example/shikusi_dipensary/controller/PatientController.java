@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/patient")
+@RequestMapping("/api/v1/patient")
 public class PatientController {
     private final PatientService patientService;
 
@@ -19,7 +19,7 @@ public class PatientController {
         this.patientService = patientService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/all")
     public ResponseEntity<List<Patient>> getAllPatients(){
         List<Patient> patients = patientService.findAllPatients();
         return new ResponseEntity<>(patients, HttpStatus.OK );

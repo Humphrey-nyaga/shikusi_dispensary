@@ -57,12 +57,12 @@ Now that we’ve learned about the anatomy of our endpoints and the different re
 
 ## Configuration table
   
-   | Components  | Technology  | 
-   | :---        |    :----:   |   
-   | Backend   | Spring Boot 6.0+, Java 11+/ Java 17 |
-   | Security |  Spring Security, https|
-   | Database | MySQL|
-   | API Documentation	| Swagger API + (Hub)|
-   | Server Build| Maven|
-   | API testing| POSTMAN|
-   | Tool | Intellj Idea|
+   | Components         | Technology  | 
+--------------------| :---        |    :----:   |   
+   | Backend            | Spring Boot 6.0+, Java 11+/ Java 17 |
+   | Security           |  Spring Security, https|
+   | Database           | MySQL|
+   | API Documentation	 | Swagger API + (Hub)|
+   | Server Build       | Maven|
+   | API testing        | POSTMAN|
+   | Tool               | Intellj Idea|
