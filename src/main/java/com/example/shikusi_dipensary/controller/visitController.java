@@ -2,6 +2,7 @@ package com.example.shikusi_dipensary.controller;
 
 import com.example.shikusi_dipensary.entity.Patient;
 import com.example.shikusi_dipensary.entity.Visit;
+import com.example.shikusi_dipensary.repository.VisitProjection;
 import com.example.shikusi_dipensary.repository.VisitRepository;
 import com.example.shikusi_dipensary.services.PatientService;
 import com.example.shikusi_dipensary.services.VisitService;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/visit")
+@RequestMapping("/api/v1/visit/")
 public class visitController {
     private VisitRepository visitRepository;
     private VisitService visitService;
@@ -27,14 +28,14 @@ public class visitController {
         this.patientService = patientService;
     }
 
-    @GetMapping("/patient/{patientID}/")
-    public List<Visit> getVisitsForPatient(@PathVariable Long patientID){
+    @GetMapping("patient/{patientID}/")
+    public List<VisitProjection> getVisitsForPatient(@PathVariable Long patientID){
         return visitRepository.findByPatient_Id(patientID);
     }
 
 
     /* Add patient visits */
-    @PostMapping("/patient/{patientID}/")
+    @PostMapping("patient/{patientID}/")
     public ResponseEntity<Map<String, Object>> addVisit(@PathVariable("patientID") Long patientID, @RequestBody Visit visit) {
         Patient patient = patientService.findPatientById(patientID);
         visit.setPatient(patient);
