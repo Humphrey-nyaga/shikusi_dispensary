@@ -1,5 +1,6 @@
 package com.example.shikusi_dipensary.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -24,6 +25,7 @@ public class Patient implements Serializable {
     private String phoneNumber;
 
     @OneToMany(mappedBy="patient")
+    @JsonIgnore
     private List<Visit> visits;
 
     public Patient(){}
@@ -42,7 +44,7 @@ public class Patient implements Serializable {
     }
 
 
-    public void setVisits(List<Visit> visits) {
+   public void setVisits(List<Visit> visits) {
         this.visits = visits;
     }
     public void setAddress(String address) {

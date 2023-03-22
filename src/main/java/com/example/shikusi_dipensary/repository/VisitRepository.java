@@ -8,10 +8,11 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface VisitRepository extends JpaRepository<Visit, Long> {
-        /*@Query("SELECT v.id as id, v.visitDate as visitDate, v.visitReason as visitReason FROM Visit v WHERE v.patient.id = :id")
-        List<VisitProjection> findByPatient_Id(@Param("id") Long patientId); */
-                @Query("SELECT v.id as id, v.visitDate as visitDate, v.visitReason as visitReason, v.patient.id as patientId FROM Visit v WHERE v.patient.id = :id")
-                List<VisitResponse> findByPatient_Id(@Param("id") Long patientId);
+
+      /* The query includes the patient id in json response of each visit*/
+       @Query("SELECT v.id as id, v.visitDate as visitDate, v.visitReason as visitReason, p.id as patientId FROM Visit v JOIN v.patient p WHERE p.id = :id")
+        List<Visit> findByPatient_Id(@Param("id") Long patientId);
+
 
 
 }

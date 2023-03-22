@@ -1,5 +1,6 @@
 package com.example.shikusi_dipensary.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
@@ -55,5 +56,9 @@ public class Visit {
 
     public void setPatient(Patient patient) {
         this.patient = patient;
+    }
+    @JsonProperty("patient_id")
+    public Long getPatientId() {
+        return patient.getId();
     }
 }

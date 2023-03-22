@@ -23,14 +23,15 @@ public class VisitService {
         this.patientRepository = patientRepository;
     }
 
-    public Visit addVisit(Long patientId, Visit visit) {
-        Patient patient = patientRepository.findById(patientId)
-                .orElseThrow(() -> new PatientNotFoundException("Patient with id: " + patientId + " not found"));
+    public Visit addVisit(Visit visit) {
+        Patient patient = patientRepository.findById(visit.getPatientId())
+                .orElseThrow(() -> new PatientNotFoundException("Patient with id: " + visit.getPatientId() + " not found"));
 
         visit.setPatient(patient);
         return visitRepository.save(visit);
     }
 
 
-    }
+
+}
 
