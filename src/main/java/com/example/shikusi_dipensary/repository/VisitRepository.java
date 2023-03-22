@@ -11,7 +11,7 @@ public interface VisitRepository extends JpaRepository<Visit, Long> {
 
       /* The query includes the patient id in json response of each visit*/
        @Query("SELECT v.id as id, v.visitDate as visitDate, v.visitReason as visitReason, p.id as patientId FROM Visit v JOIN v.patient p WHERE p.id = :id")
-        List<Visit> findByPatient_Id(@Param("id") Long patientId);
+        List<VisitProjection> findByPatient_Id(@Param("id") Long patientId);
 
 
 
