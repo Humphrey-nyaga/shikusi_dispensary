@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeeService {
     private final EmployeeRepository employeeRepository;
+    private final EmployeeService employeeService;
 
-    public EmployeeService(EmployeeRepository employeeRepository){
+    public EmployeeService(EmployeeRepository employeeRepository ,EmployeeService employeeService){
        this.employeeRepository = employeeRepository;
+       this.employeeService = employeeService;
     }
 }
