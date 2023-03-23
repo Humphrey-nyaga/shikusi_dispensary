@@ -21,10 +21,19 @@ public class Employee {
                     )
             }
     )
-    @Column(name="employee_id", nullable=false)
-    private UUID employee_id;
+    @Column(name="employeeId", nullable=false)
+    private UUID employeeId;
 
-   @Column(nullable = false)
+    public Employee(String firstname, String middlename, String lastname, String email, String dob, String password) {
+        this.firstname = firstname;
+        this.middlename = middlename;
+        this.lastname = lastname;
+        this.email = email;
+        this.dob = dob;
+        this.password = password;
+    }
+
+    @Column(nullable = false)
     private String firstname;
     private String middlename;
     @Column(nullable = false)
@@ -33,12 +42,12 @@ public class Employee {
     private String dob;
     private String password;
 
-    public UUID getEmployee_id() {
-        return employee_id;
+    public UUID getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmployee_id(UUID employee_id) {
-        this.employee_id = employee_id;
+    public void setEmployeeId(UUID employeeId) {
+        this.employeeId = employeeId;
     }
 
     public String getFirstName() {
