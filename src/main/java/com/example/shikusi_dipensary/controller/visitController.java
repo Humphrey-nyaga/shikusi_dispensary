@@ -15,6 +15,7 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/visit/")
@@ -30,7 +31,7 @@ public class visitController {
     }
 
     @GetMapping("patient/{patientID}/")
-    public List<VisitProjection> getVisitsForPatient(@PathVariable Long patientID){
+    public Optional<VisitProjection> getVisitsForPatient(@PathVariable Long patientID){
         return visitRepository.findByPatient_Id(patientID);
     }
 
