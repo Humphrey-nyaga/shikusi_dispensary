@@ -1,16 +1,29 @@
 package com.example.shikusi_dipensary.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name = "triage")
 public class Triage implements Serializable {
-    @Id @GeneratedValue
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator",
+            parameters = {
+                    @org.hibernate.annotations.Parameter(
+                            name = "uuid_gen_strategy_class",
+                            value = "org.hibernate.id.uuid.CustomVersionOneStrategy"
+                    )
+            }
+    )
+    @Column(name = "triageID", nullable = false)
+    private UUID triageID;
 
     /*
      * Patient Vitals at triage
@@ -129,12 +142,12 @@ public class Triage implements Serializable {
     public Date getDate() {
         return date;
     }
-    public long getId() {
-        return id;
+    public UUID getTriageID() {
+        return triageID;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setTriageID(UUID triageID) {
+        this.triageID = triageID;
     }
 
 }

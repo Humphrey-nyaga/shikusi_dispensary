@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,10 +37,12 @@ public class visitController {
 
     /* Add patient visits */
     @PostMapping("patient/{patientID}/")
-    public ResponseEntity<Map<String, Object>> addVisit(@PathVariable("patientID") Long patientID, @RequestBody Visit visit) {
+    public ResponseEntity<Map<String, Object>> createVisit(@PathVariable("patientID") Long patientID, @RequestBody Visit visit) {
         Patient patient = patientService.findPatientById(patientID);
         visit.setPatient(patient);
-        visitService.addVisit(visit);
+        LocalDate currentDate = LocalDate.now();
+        visit.setVisitDate(currentDate);
+        visitService.createVisit(visit);
 
         /*Return only specific data of the visit.
         * Without the map, successful creation of a visit response returns

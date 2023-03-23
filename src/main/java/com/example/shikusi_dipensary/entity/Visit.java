@@ -3,6 +3,7 @@ package com.example.shikusi_dipensary.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "visit")
@@ -19,10 +20,11 @@ public class Visit {
     @JoinColumn(name = "patient_id", referencedColumnName = "id")
     private Patient patient;
 
-    public Visit() {}
+    @OneToMany(fetch=FetchType.LAZY, mappedBy = "visit")
+    private List<Triage> triage;
 
-    public Visit(LocalDate visitDate, String visitReason) {
-        this.visitDate = visitDate;
+    public Visit(){}
+    public Visit(String visitReason) {
         this.visitReason = visitReason;
     }
 
