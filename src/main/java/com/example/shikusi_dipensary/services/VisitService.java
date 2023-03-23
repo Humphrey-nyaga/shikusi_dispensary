@@ -6,11 +6,7 @@ import com.example.shikusi_dipensary.exceptions.PatientNotFoundException;
 import com.example.shikusi_dipensary.repository.PatientRepository;
 import com.example.shikusi_dipensary.repository.VisitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import java.net.URI;
 
 @Service
 public class VisitService {
@@ -23,10 +19,9 @@ public class VisitService {
         this.patientRepository = patientRepository;
     }
 
-    public Visit addVisit(Visit visit) {
+    public Visit createVisit(Visit visit) {
         Patient patient = patientRepository.findById(visit.getPatientId())
                 .orElseThrow(() -> new PatientNotFoundException("Patient with id: " + visit.getPatientId() + " not found"));
-
         visit.setPatient(patient);
         return visitRepository.save(visit);
     }
